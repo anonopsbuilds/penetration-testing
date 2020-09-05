@@ -1,0 +1,15 @@
+
+Metasploit Community / Pro No Longer Ships in Kali
+
+At the request of Rapid7, we have removed the Metasploit Community / Pro package from Kali Linux and now host the open-source metasploit-framework package only. For all of you who require Community or Pro, you will now need to download it from Rapid7 and then register and submit your personal details in order to get a license. In addition, the Rapid7 team no longer maintains the Metasploit package in Kali, which has brought with it some substantial changes – we’ve moved to a native setup, where rather than bundling all the required software needed to run Metasploit in one big package, we use native dependencies within Kali to support the metasploit-framework package. This results in a faster, smoother work experience and easier integration with Metasploit dependencies. For more information about this, check out our Metasploit Framework in Kali documentation page.
+Starting up Metasploit Framework in Kali Linux 2.0
+
+Due to the above-mentioned changes in the metasploit-framework package, there are some minor changes in how Metasploit is started in Kali – specifically, there is no longer a metasploit service. The following will launch Armitage while initializing the Metapsloit database for the first time:
+# Start the PostgreSQL Database
+systemctl start postgresql
+# Initialize the Metasploit Framework Database 
+msfdb init
+
+# Start Armitage
+armitage
+
